@@ -7,3 +7,17 @@
 - camelCase with ()
 - the **identifier** is the name of the function
 
+
+06/19/25
+## Ch. 1.3 - Objects and Variables
+- **object** in C++ only refers to objects in memory or variables and NOT functions
+- **definition** is a declaration of a variable
+  - ie x = 1;
+
+
+## Ch. 1.4 - Variable Assignment and Initialization
+- different types of initialization all behave the same in C++17 and above
+  - in older versions of C++ direct copy initialization is slower
+  - ie int x = 1; and int x { 1 }; are the same
+
+
