@@ -23,3 +23,34 @@
   - ie cant do int i = { 4.5 }; since the type doesnt match compiler will get angry
 - list initialization {} is the most preferred
 - an initialized object is called an **instance**
+- *maybe_unused* before initializing variable to allow compiler to generate with unused variables
+  - this is just lazy instead of taking out the unused variables
+
+
+06/22/25
+## Ch. 1.5 - iostream: cout, cin, and endl
+- **std::cout** - character output
+  - sends data to console
+  - used with the **insertion operator <<**
+  - this is a **buffered** command
+    - does not execute immediately, instead is output when the buffer is **flushed**
+    - writing data to buffer and flushing in batches is faster than unbuffered data transfer
+- **std::endl** - end line
+  - newline and flushes the buffer to output
+    - this means it's slow to call it for every line
+  - use **\n** instead and only use **std::endl** when you need new line and flush
+    - works the same as in C
+- **std::cin** - character input
+  - input is added to end of the input buffer
+  - then the **extraction operator >>** removes characters from the front of the input buffer
+    - assigns them to a variable via copy-assignment
+  - each line of input data is terminated by **\n** when the user hits return
+    - the \n is not extracted when copy-assigned to a variable
+- **extraction**
+  - if prior extraction fails, then no further attempts will be made
+  - if no characters could be extracted, variable is copy assigned to 0
+  - leading whitespace is discarded
+  - if input buffer is empty operator >> will wait for user input
+  - the >> operator extracts as many **consecutive** characters until it finds \n or non valid character
+
+
