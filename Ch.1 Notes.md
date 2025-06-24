@@ -54,3 +54,35 @@
   - the >> operator extracts as many **consecutive** characters until it finds \n or non valid character
 
 
+06/23/25
+## Ch. 1.6 - Uninitialized Variables and Undefined Behavior
+- **Uninitialized variables**
+  - given memory address but it points to garbage
+  - C/C++ does not automatically initialize variables
+  - initialization can be omitted for small performance gain
+- **implementation-defined behavior**
+  - an **implementation** is the compiler and associated standard library it comes with
+  - sometimes the implementation can define how an aspect of the language will behave
+    - ex **sizeof(int)** could produce different answers
+- **unspecified behavior**
+  - behavior is left up to the implementation but it is not documented
+
+
+## Ch. 1.7 - Keywords and Naming Identifiers
+- **keywords** are a set of 92 words reserved by c++ with special meanings
+  - **special identifiers** are also reserved, but unlike keywords they are only reserved in special cases
+- an **identifier** is the name of a variable (ie int identifier or identifier())
+  - cannot be a keyword
+  - can only be composed of letters, numbers, and underscores (no symbols or white space)
+  - must start with lowercase letter or underscore
+  - case sensitive (iDentifier =/= identifier)
+- convention
+  - variable names should begin with a lowercase letter
+    - if it's a single word, it should be entirely lowercase (including functions)
+  - function names that start with capital letters are usually user defined types
+  - camelCase
+  - avoid starting a variable name with an underscore
+  - make the identifier name equally as specific as it is specific and accessible
+    - ie in the body of a short function variable can have a shorter name
+
+
