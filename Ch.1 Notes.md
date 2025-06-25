@@ -114,3 +114,23 @@
   - most operators produce return values
   - an operator that produces an effect beyond a return value has a **side effect**
     - ie *std::cout << 5* has the side effect of printing 5 to the console
+
+## Ch. 1.10 - Intro to Expressions
+- an **expression** is a sequence of non empty variables, literals, operators, and function calls
+  that calculate a value
+- **evaluation** is the process of executing an expression
+  - expressoins are always evaluated as part of a statement
+- the **result** is the output after evaluation (aka return value)
+  - this can be a value, object, function, or nothing
+- *type identifier { expression };*
+- expressoins cannot be executed by themselves - they must exist as part of a statement
+- **expression statement** - a statement that is an expression followed by a semicolon
+- **subexpression** is an expression used as an operator
+  - ie x = 4 + 5; the subexpressions are 'x' and '4 + 5'
+- **full expressoin** - an expression that is not a subexpression
+  - ie x = 4 + 5 //the whole thing is the full expression
+- **compound expression** - an expression that that contains two or more uses of operators
+  - x = 4 + 5 is compound because it uses operator= and operator+
+
+## Ch. 1.11 - Developing Your First Program
+- 
