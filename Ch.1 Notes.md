@@ -86,3 +86,19 @@
     - ie in the body of a short function variable can have a shorter name
 
 
+06/24/25
+## Ch. 1.8 - Whitespace and Basic Formatting
+- **whitespace** is characters used for formatting purposes (spaces, tabs, newline)
+- compiler doesnt care how much whitespace is used (ie int     x; still works lol)
+- newlines are not allowed in quoted text
+  - quoted text separated by nothing but whitespace will be concatenated
+- whitespace is otherwise generally ignored by the comiler so no hard rules
+- "whitespace independent language"
+- tabs should be set equivalent to 4 spaces generally
+- typically 80 characters max for lines; if longer split into multiple lines
+- if a line is split on an operator (+, -, etc) it should go at the start of the new line
+- pick a style guide!
+
+
+## Ch. 1.9 - Introduction to Literals and Operators
+- 
