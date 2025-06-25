@@ -101,4 +101,16 @@
 
 
 ## Ch. 1.9 - Introduction to Literals and Operators
-- 
+- **Literals** (aka constants)
+  - a fixed value that is inserted directly into the code (ie *std::out << 5;* // 5 is the literal)
+  - value cannot be changed unlike a variable
+- **Operators**
+  - +, -, %, new, delete, throw, etc
+  - **Unary** - operator that acts on one operand. (ie '-' flips positive 5 to -5)
+  - **Binary** - operator that acts on two operands. (ie '+' in 1 + 2)
+  - **Ternary** - operator that acts on three operands. (the conditional operator)
+  - **Nullnary** - operator that acts on zero operands. (the throw operator)
+  - operators generally execute in order of PEMDAS
+  - most operators produce return values
+  - an operator that produces an effect beyond a return value has a **side effect**
+    - ie *std::cout << 5* has the side effect of printing 5 to the console
