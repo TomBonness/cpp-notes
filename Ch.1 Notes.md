@@ -133,4 +133,4 @@
   - x = 4 + 5 is compound because it uses operator= and operator+
 
 ## Ch. 1.11 - Developing Your First Program
-- 
+- check example program :D
