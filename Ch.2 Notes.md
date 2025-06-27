@@ -14,11 +14,22 @@
     - cannot define a function inside of another function, but you can call it
 
 
-## Ch 2.2 - Function Return Values
+## Ch. 2.2 - Function Return Values
 - **return type** the type defined before the functionname that determines the type it will return
 - **return value** is what is returned back to the caller
+  - return from main is also known as a **status code** or an **exit code**
+    - exit code '0' means the program ran successfully
 - requirements for main()
   - must return an **int**
   - cannot explicitly make a function call to main()
   - generally (not always) main should be the last function in the file
-- 
+- a value returning function must return a value or else it's undefined behavior
+- main() will implicitly return '0'
+- functions can only return a single value
+
+
+06/27/2026
+## Ch. 2.3 - Void Functions
+- a **void function** is a function that doesn't return anything
+  - no return statement needed
+- returning a value in a void function will cause a compiler error
