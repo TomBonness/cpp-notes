@@ -33,3 +33,13 @@
 - a **void function** is a function that doesn't return anything
   - no return statement needed
 - returning a value in a void function will cause a compiler error
+
+
+## Ch. 2.4 - Introduction to Function Parameters and Arguments
+- a **function parameter** is a variable used in the header of the function
+  - they are initialized with a value provided by the caller of the function
+- an **argument** is a value that is passed from the called to the function
+- when a function is called all of the parameters are created as variables
+  - the value of each argument is copied into the matching parameter
+    - this is called **pass by value**
+      - **value parameters** are functions that use pass by value 
