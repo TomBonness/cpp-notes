@@ -42,4 +42,10 @@
 - when a function is called all of the parameters are created as variables
   - the value of each argument is copied into the matching parameter
     - this is called **pass by value**
-      - **value parameters** are functions that use pass by value 
+      - **value parameters** are functions that use pass by value
+- **unreferenced functions** are functions that have parameters that are not used
+  - compiler will warn
+  - an **unnamed parameter** is where the type is defined but it has no name
+    - *fuction(int){}* will work without an error
+      - google style guide says to comment what it does like function(int /*count*/) {};
+
