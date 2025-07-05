@@ -49,3 +49,11 @@
     - *fuction(int){}* will work without an error
       - google style guide says to comment what it does like function(int /*count*/) {};
 
+07/04/2025
+## Ch. 2.5 - Introduction to Local Scope
+- **Local variables** are defined inside the body of a function
+  - function parameters are also considered to be local variables
+- local variables are destroyed in the opposite order they are instantiated
+  - at the end of the curley brackets in which it was definted
+- an objects **lifetime** is the time between it's creation and destruction
+- 
