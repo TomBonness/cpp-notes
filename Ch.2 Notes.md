@@ -49,6 +49,7 @@
     - *fuction(int){}* will work without an error
       - google style guide says to comment what it does like function(int /*count*/) {};
 
+
 07/04/2025
 ## Ch. 2.5 - Introduction to Local Scope
 - **Local variables** are defined inside the body of a function
@@ -56,4 +57,18 @@
 - local variables are destroyed in the opposite order they are instantiated
   - at the end of the curley brackets in which it was definted
 - an objects **lifetime** is the time between it's creation and destruction
-- 
+- **scope** is where an identifier can be seen and used
+  - compile time property, not in scope will cause compilation error
+- **local scope** or **block scope**
+  - usable from point of definitoin to end of curly brackets it's declared in
+- variables should be defined as close to their first use as reasonable
+- a **temporary object** (aka **anonymous object**) is used to hold a variable this is only used
+  or needed for a short period of time
+  - for example when a function ends but its caller still needs to hold the info to do something
+  - temporary objects have no scope and are solely created by the compiler
+  - temporary objects are always destroyed at the end of the expression in which they were created
+
+
+  07/05/2025
+  ## Ch. 2.6 - Forward Declarations and Definitions
+  - 
