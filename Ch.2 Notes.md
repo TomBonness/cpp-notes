@@ -69,6 +69,43 @@
   - temporary objects are always destroyed at the end of the expression in which they were created
 
 
-  07/05/2025
-  ## Ch. 2.6 - Forward Declarations and Definitions
-  - 
+  07/06/2025
+  ## Ch. 2.7 - Forward Declarations and Definitions
+  - a **forward declaration** tells the compiler about a function identifier before it is defined
+    - **function declaration statement** (aka function prototype) is used as the forward declaration
+      - consists of the return types, name, and parameter types
+        - ie *int add(int x, int y);* before the main function
+  - most often used for when functions are defined in different files
+  - a **declaration** tells the compiler about the existance of a function
+    - a **definition** is a declaration that implements the identifier
+      - all definitions are delcarations, but not all definitions are declarations
+  - **One Definition Rule (ODR)**
+    - within a file, each function can only have one definition inside its scope
+      - compiler error
+    - within a program, each function can only have one definiton inside its scope
+      - linker error
+    - types, templates, inline functions, and inline vars can have dup definitions in different files
+      - undefined behavior
+
+
+## Ch. 2.8 - Programs with Multiple Code Files
+- must use forward declarations for calls to functions in other files
+- order of compilation should not be relevant
+
+
+## Ch. 2.9 - Naming Collisions and Introduction to Name Spaces
+- **naming collision** occures when two identical identifiers are introduced in the same program in a 
+  way that either the compiler or linker cannot tell them apart
+- a **scope region** is an area of code where all declared identifiers are considered distinct
+  from names declared in other scopes
+- a **namespace** allows for the declaration of functions inside of its scape to avoid collisions
+  - executable statements are not allowed inside namespaces (ie x=5;)
+- the **global namespace** is everything that isnt declared inside inside a class, function, or namespace
+  - implicitly defined namespace called global namespace or global scope
+- **scope resolution operator** is the :: (ie std::cout)
+  - ie the cout that is declared in namespace std
+  - when the identifier includes a namespace prefix it's called a **qualified name**
+  - the **namespace prefix** is the std in std::cout
+- a **using directive** statement can also be used instead of a namespace prefix 
+  - ie *using namespace std;* you could then just call it like *cout << "text";*
+  - this should always be avoided
