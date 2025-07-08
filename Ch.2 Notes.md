@@ -69,23 +69,23 @@
   - temporary objects are always destroyed at the end of the expression in which they were created
 
 
-  07/06/2025
-  ## Ch. 2.7 - Forward Declarations and Definitions
-  - a **forward declaration** tells the compiler about a function identifier before it is defined
-    - **function declaration statement** (aka function prototype) is used as the forward declaration
-      - consists of the return types, name, and parameter types
-        - ie *int add(int x, int y);* before the main function
-  - most often used for when functions are defined in different files
-  - a **declaration** tells the compiler about the existance of a function
-    - a **definition** is a declaration that implements the identifier
-      - all definitions are delcarations, but not all definitions are declarations
-  - **One Definition Rule (ODR)**
-    - within a file, each function can only have one definition inside its scope
-      - compiler error
-    - within a program, each function can only have one definiton inside its scope
-      - linker error
-    - types, templates, inline functions, and inline vars can have dup definitions in different files
-      - undefined behavior
+07/06/2025
+## Ch. 2.7 - Forward Declarations and Definitions
+- a **forward declaration** tells the compiler about a function identifier before it is defined
+  - **function declaration statement** (aka function prototype) is used as the forward declaration
+    - consists of the return types, name, and parameter types
+      - ie *int add(int x, int y);* before the main function
+- most often used for when functions are defined in different files
+- a **declaration** tells the compiler about the existance of a function
+  - a **definition** is a declaration that implements the identifier
+    - all definitions are delcarations, but not all definitions are declarations
+- **One Definition Rule (ODR)**
+  - within a file, each function can only have one definition inside its scope
+    - compiler error
+  - within a program, each function can only have one definiton inside its scope
+    - linker error
+  - types, templates, inline functions, and inline vars can have dup definitions in different files
+    - undefined behavior
 
 
 ## Ch. 2.8 - Programs with Multiple Code Files
@@ -109,3 +109,7 @@
 - a **using directive** statement can also be used instead of a namespace prefix 
   - ie *using namespace std;* you could then just call it like *cout << "text";*
   - this should always be avoided
+ 
+
+## Ch. 2.10 - Introduction to the Preprocessor
+
