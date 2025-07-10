@@ -110,6 +110,50 @@
   - ie *using namespace std;* you could then just call it like *cout << "text";*
   - this should always be avoided
  
-
+07/08/2025
 ## Ch. 2.10 - Introduction to the Preprocessor
+- the preprocessor processes code before its sent to compiler
+- **preprocessor directives** start with # and end with newline and tell preprocessor to perform tasks
+- the preprocessor replaces #include <foo> with the contents of foo
+- a **macro** is a rule that defines how input text is converted into replacement output text
+  - **function-like macros** - act like a function and are generally considered unsafe
+  - **object-like macros** - define a single identifier
+    - generally avoided for better options mostly used in legacy code
+    - #define IDENTIFIER substitution_text
+  - macro names a typically uppercase and separated by underscores
+- **conditional compilation** specifies whether a program will or will not compile
+  - #ifdef #ifndef #endif
+  - #if0 with #endif is used to comment out code from compiling
+- directives are resolved file to file top to bottom before compilation
+  - only in scope in the file they are resolved
+    - file scope, cannot be in a function's scope
 
+
+07/09/2025
+## Ch. 2.11 - Header Files
+- **header files** end in .h and allow you to have forward declarations in one place
+- Consists of two main parts:
+  - a **header guard**
+  - the content in the header file (generall forward declarations)
+-  often paired with a corresponding .cpp file with the same name
+- when the preprocessor reads #include "file.h" it inserts the file contents at that point
+- avoid putting function or variable definitions in header files (violates one definition rule ODR)
+- including header files can help catch errors
+  - ie declaration in header has different return type than definition in .cpp file will throw error
+- do not #include any .cpp files
+  - can cause big list of errors and there is no reason to do so
+  - if project wont compile unless .cpp is #included, file is likely not being compiled in makefile
+- angled brackets <> tell preprocessor will only search included directories
+- quotes "" tell preprocessor to search in current local directory first, then included dirs
+- if you wrote it use "" if not use <>
+- can include relative path like #include "../desktop/folder/file.h"
+- **transitive includes** happen when one #included file also #includes another file
+  - try to avoid relying on this and #include other files explicitly
+- order of #inclusion should generally not matter but
+  1. paired header file
+  2. other headers from same project
+  3. 3rd party library headers
+  4. standard library headers
+- always include header guards
+
+## Ch. 2.12 - Header Guards
