@@ -156,4 +156,28 @@
   4. standard library headers
 - always include header guards
 
+
+07/10/2025
 ## Ch. 2.12 - Header Guards
+- a **header guard** is a conditional compilation directive that stops duplicate definitions
+  - conditional checks if it has been previously defined and doesn't include if so
+  - Example for file named example.h
+      ```c++ 
+      #ifndef EXAMPLE_H
+      #define EXAMPLE_H
+      //declarations and stuff
+      #endif
+      ```
+  - should include the full filename of the header file in caps with underscores for space and period
+- all headers should use header guards
+- sometimes better to use unique names in header guards to avoid conflict with files like config.h
+  - name them like ```FILE_CREATION-DATE_H``` instead of just ```FILE_H``` to avoid name collisions
+- header guards do not stop a file from receiving more than one copy of a guarded header
+  - ie if you include in two cpp files that are then compiler together the linker will fail
+    - don't define functions in the header file to avoid this
+- **#pragma once** tells the compiler to guard the header automatically
+  - not universal but generally standard, google recommends against it but most use it anyways
+
+
+## Ch. 2.13 - How to Design your Frist Programs
+- "A complex system that works is invariably found to have evolved from a simple system that worked" - John Gall
