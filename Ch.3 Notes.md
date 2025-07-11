@@ -38,5 +38,26 @@
   - ```std::clog``` basically is the same as ```std:cerr``` and you must pipe to file yourself
     - likely better off using a 3rd party lib for this (they use 'plog' library)
 
+
 ## Ch. 3.6 - Using an Integrated Debugger: Stepping
+- **program state** is all the tracked information about where it is in execution
+- a **debugger** is a tool that controls how a program executes and examine its state at a given point
+- **stepping** allows you to execute the code statement by statement (stepping)
+- **step into** command executes the enxt statement in the normal execution path and then pauses
+  - if there is a function call it will jump to the top of the function being called
+- **step over** will execute the entire function call and return after function execution
+- **step out** executes all remaining code in the current function and stops when function returns
+- **step back** is not really a thing so just restart the debugger
+
+
+## Ch. 3.7 - Using an Integrated Debugger: Running and breakpoints
+- **run to cursor** runs program until it reaches your cursor
+- **continue** runs the program from that point forward until it finishes or hits a breakpoint
+- **start** same as continue but starts from beginning of program
+- **breakpoints** are special markers that tell the debugger to stop execution in debug mode
+- **set next statement** change to a different point of execution
+  - changes the point of execution but does not change the program's state
+
+
+## Ch. 3.8 - Using an Integrated Debugger: Watching Variables
 - 
