@@ -59,5 +59,25 @@
   - changes the point of execution but does not change the program's state
 
 
+07/11/2025
 ## Ch. 3.8 - Using an Integrated Debugger: Watching Variables
-- 
+- **watching a variable** is inspecting it as the program executes
+- the **watch window** is a pane that displays selecter variables as the program is stepped through
+- can set a breakpoint for watched variables to more easily track
+
+
+## Ch. 3.9 - Using an Integrated Debugger: The Call Stack
+- the **call stack** is a list of all functions called before current point of execution
+
+## Ch. 3.10 - Finding Issues Before They Become Problems
+- **refactoring** is changing the structure of the code without changing the function
+  - the goal is to make the program less complex by increasing organizatoin and modularity
+- **defensive programming* anticipates all the ways the software could be misused
+- **unit testing** is used to test small units of source code for proper functionality
+  - a **test function** is a dummy load to make sure a component is working
+- **constraints** can be used to make sure proper data is being passed to the function
+  - ie stop negative number from being passed when the func expects positive number
+    - function immediately errors instead of continuing with bad inputs
+      - ```assert``` and ```static_assert``` can be used to help with this
+- **static analysis tools** aka **linters** check for semantic issues before compilation
+
