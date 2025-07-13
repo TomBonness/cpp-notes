@@ -85,4 +85,29 @@
 
 
 ## Ch. 4.6 - Fixed-Width Integers and size_t
+- must ```#include <cstdint>``` to use the ```_t```
+- only the minimum size of integer variables is guaranteed
+  - int is min 16 bits but it's typically 32-bits on modern architectures
+- C++11 introduced **fixed-width integers** that are guaranteed to be the same size on any architecture
+  - these should always be used when you need a guaranteed range
+- ```std::int8_t``` and ```std::uint8_t``` behave the same as a signed and unsigned char
+  - the 16 bit versions dont have this issue
+- downsides
+  - fixed width integers are not guaranteed to be defined on all architectures
+  - fixed width integers may be slower than a wider type on certain architectures
+- **fast types** provide the fastest signed/unsigned integer type with a width of at least x bits
+  - ```std::int_fast_32_t``` will result in teh fastest signed int type that's at least 32 bits
+  - fast types can lead to memory wastage
+- **least types** provide the smallest signed/unsigned integer type with a width of at least x bits
+  - ```std::uint_least32_t``` will result in the smallest unsigned integer type that's 32 bits
+- best practice is to avoid fast and least integral types because they may behave differently on different architectures
+>[!TIP] better to be correct than fast, and better to fail at compile time than runtime
+- the ```sizeof()``` operator returns a value type of ```std::size_t```
+  - guaranteed to be unsigned and at least 16 bits, but is mostly equivalent to address width of the application
+  - which is an alias of an implementation defined unsigned integral type
+    - it's actually a typedef
+    - best header to include for this is  ```<cstddef>```
 
+
+## Ch. 4.7 - An Introduction to Scientific Notation
+- 
