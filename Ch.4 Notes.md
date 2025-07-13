@@ -109,5 +109,78 @@
     - best header to include for this is  ```<cstddef>```
 
 
+07/12/25
 ## Ch. 4.7 - An Introduction to Scientific Notation
+
+
+## Ch. 4.8 - Floating Point Numbers
+- three fundamental floating point types
+  - ```float``` is 4 bytes (almost always)
+  - ```double``` is 8 bytes (almost always)
+  - ```long double``` 8, 12, or 16 bytes
+- they should be defined like this:
+  ```cpp
+      float f;
+      double d;
+      long double ld;
+      float c { 5.0 }
+  ```
+  - should always include at least one decimal place to help compiler understand it's a float
+  - floating point literals default to type double
+  >[!WARNING] Always ensure the type of literals matches the type of the variable or else they will convert
+- by default ```std::cout``` has a precision of 6 digits and will truncate anything after 6 digits
+  - will not print fractional part of float point type if it's zero (ie 7.000 -> 7)
+  - it will switch to output scientific notation in some cases
+    - may pad out the number weird like ```9.87654e006``` but just ignore the zeros before the exponent
+    - an **output manipulator** will alter how data is output
+      - can override default output precision with ```std::setprecision()```
+      - defined in the ```<iomanip>``` header
+      ```cpp
+      std::cout << std::setprecision(5); // show 5 digits of precision
+      ```
+      >[!TIP] Output manipulators are sticky, once they are set they will remain set
+- the **precision** of a float type defines how many significant digits it can represent without information loss
+>[!CAUTION] A precision value over the precision of the type will yield undefined behavior
+- comparing floating point numbers wil yeild weird results because of rounding errors
+- ```inf``` represents infinity and is signed
+- ```NaN``` or Not a Number (division by zero)
+- **signed zero** giving separate representations for positive zero and negative zero
+  - ```double z {-0.0 / posinf } == -0```
+
+
+## Ch. 4.9 - Boolean Values
+- **Boolean** variables can only have two values, true or false
+- booleans are declared like
+    ```cpp
+    bool b;
+    bool b { true };
+    bool b { !true };    //not true
+    bool b { 1 };        //true - integer to bool conversion
+    ```
+- booleans are evaluated to the integral types of 0 = false and any other value is true
+- ```std::boolalpha``` can print true or false instead of 1 or 0
+  - also allows ```std::cin``` to take 'true' and 'false' as inputs
+- ```std::cin``` by default only accepts numeric input for Boolean variables, inputting 'false' will fail
+
+
+## Ch. 4.10 - Introduction to if Statements
+- an **if statement** executes a section of code only if a condition is true
+  ```cpp
+  if (condition)
+    true_statement;
+  ```
+- a **condition** is an expression that evaluates to a Boolean value
+- an **if else** statement has a statement for if the condition is false as well
+  ```cpp
+  if (condition)
+    true_statement;
+  else
+    false_statement;
+  ```
+- non-boolean conditionals are converted to boolean - false is zero and any other value is true
+- an early return statement can be placed inside of an if statement
+  - this will cause the function to return to the caller early
+
+
+## Ch. 4.11 - Chars
 - 
