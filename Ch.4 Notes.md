@@ -183,4 +183,34 @@
 
 
 ## Ch. 4.11 - Chars
-- 
+- a **char** will always be 1 byte in size and is usually signed (can be unsigned)
+- the **char** datatype is designed to hold a single character
+  - a **character** is a single letter, number, or symbol
+- the char data type is an integral type
+  - the underlying value is stored as an integer known as an ASCII Character
+    - an **ASCII Character** represents the basic english alphabet and some characters between 0 and 127
+      - ASCII Codes 0-31 and 127 are called **unprintable chars** and mostly obsolete
+      - ASCII Codes 32-126 are called **printable characters** and represent the normal stuff
+- character literals are always placed between single quotes (ie 'g' or '1')
+- chars can be initialized as follows:
+```cpp
+char ch2{ 'a' };    // initializes with the letter a
+char ch1{ 97 };     // also initializes 'a' but not preferred way to do so
+char ch0{ '97' };   // initializes the number 97 not the ASCII character
+std::cout << ch1;   // prints the letter 'a'
+```
+- the function ```std::cout``` prints the char variables as ASCII characters not their integral number
+  - the ```std::cin.get()``` function will allow extracting the whitespace for an input like `a b`
+    - otherwise the leading whitespace is ignored when pulled from the bufffer
+- **escape sequences** start with a \ and are followed by a letter or number (ie '\n' or '\t')
+- text in single quotes is treated as a char literal, whereas text in double quotes is treated as a C-style string
+  - always use single quotes for char literals to avoid confusion
+>[!CAUTION] Some C++ compilers support multicharacter literals but the standard does not so don't use them
+- ```char16_t``` and ```char32_t``` provide support for 16 and 32 bit Unicode characters
+- ```wchar_t``` should literally be avoided in all cases except for interfacing with the windows API
+
+
+## Ch. 4.12 - Introduction to Type Conversion and static_cast
+- **type conversion** is the process of converting data from one type to another
+- **implicit type conversion** occures when the compiler converts type without explicitly asking
+-  
