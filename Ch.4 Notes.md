@@ -210,7 +210,19 @@ std::cout << ch1;   // prints the letter 'a'
 - ```wchar_t``` should literally be avoided in all cases except for interfacing with the windows API
 
 
+07/14/25
 ## Ch. 4.12 - Introduction to Type Conversion and static_cast
 - **type conversion** is the process of converting data from one type to another
 - **implicit type conversion** occures when the compiler converts type without explicitly asking
--  
+- conversion does not modify the value, instead it produces a converted result
+  - converted result is returned in a temporary object to the caller
+- unsafe implicit conversions will normally generate a compiler warning or error
+  - converting an ```double``` to an ```int``` will lose data and is therefore unsafe
+- **explicit type conversion** tells compiler to convert from type to type even with data loss
+  - ```static_cast``` is used for explicit type conversion
+    - ```static_cast<new_type>(expression)```
+      - angle brackets usually mean it's a type
+    - can be used to convert signed and unsigned types
+      - if destination type is unsigned overflow will modulo wrap
+      - converting unsigned to signed can be undefined or implementation defined behavior (prior to c++20)
+
